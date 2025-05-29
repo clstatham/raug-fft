@@ -1,0 +1,16 @@
+[package]
+name = "raug-fft"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+apodize = "1.0.0"
+raug = { path = "../raug" }
+realfft = "3.4.0"
+thiserror = "2.0.12"
+raug-graph = {path = "../raug-graph"}
+log = "0.4"
+
+[dev-dependencies]
+raug-ext = { path = "../raug-ext" }
+env_logger = "0.11"
