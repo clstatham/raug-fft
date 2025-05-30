@@ -10,9 +10,9 @@ mod sealed {
 pub trait Fft: sealed::Sealed + Send + 'static {
     const N_FFT: usize;
     const N_REAL_BINS: usize = Self::N_FFT / 2 + 1;
-    type AudioBlock: Signal + Deref<Target = [f32]> + DerefMut;
-    type RealFft: Signal + Deref<Target = [Complex32]> + DerefMut;
-    type ComplexFft: Signal + Deref<Target = [Complex32]> + DerefMut;
+    type AudioBlock: Signal + Clone + Default + Deref<Target = [f32]> + DerefMut;
+    type RealFft: Signal + Clone + Default + Deref<Target = [Complex32]> + DerefMut;
+    type ComplexFft: Signal + Clone + Default + Deref<Target = [Complex32]> + DerefMut;
 }
 
 macro_rules! impl_fft_frame {
